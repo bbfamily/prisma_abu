@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+mode/bvlc_googlenet.caffemodel
+mode/dog_judge_train_iter_5000.caffemodel
+mode/vgg_imagenet.mat
+python/.ipynb_checkpoints
+.idea/
+*.pyc
