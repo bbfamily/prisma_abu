@@ -11,11 +11,11 @@
 [更多风格图像展示墙](http://www.yabeetu.com/)
 
 
-[用机器学习做个艺术画家 上](http://www.jianshu.com/p/64a3b4e3f548)
+[用机器学习做个艺术画家 详细说明 上](http://www.jianshu.com/p/64a3b4e3f548)
 
-[用机器学习做个艺术画家 中](http://www.jianshu.com/p/2bd096179dd8)
+[用机器学习做个艺术画家 详细说明 中](http://www.jianshu.com/p/2bd096179dd8)
 
-[用机器学习做个艺术画家 下](http://www.jianshu.com/p/e1629d69a66a)
+[用机器学习做个艺术画家 详细说明 下](http://www.jianshu.com/p/e1629d69a66a)
 
 
 
