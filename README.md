@@ -6,10 +6,6 @@
 
 未经本人允许禁止转载
 
-[youku 阿布Prisma演示视频](http://v.youku.com/v_show/id_XMTg0MDE3NTM3Mg==.html)
-
-[更多风格图像展示墙](http://www.yabeetu.com/)
-
 
 [用机器学习做个艺术画家 详细说明 上](http://www.jianshu.com/p/64a3b4e3f548)
 
@@ -36,11 +32,6 @@ ____
 4. 针对图像部分使用机器学习算法特征层放大，部分使用一些图像处理技术，提升渲染速度
 
 我下面讲的内容是针对第四点展开试验的，可以在速度及渲染效果上都能达到比较满意的效果，因为速度上可以忽略，效果还挺好，唯一的缺陷就是在适用性上可能会需要调整一下参数（在适用性上可以结合上述第三种方式，针对一定数量的样本作为训练集x，对应的y是效果参数，对输入进行分类，再配合使用相似度等提高自动适配的能力）
-
-如下地址为git上项目的最终演示使用视频，使用本章介绍的技术实现，可以先有个直观感受
-[youku 阿布Prisma演示视频](http://v.youku.com/v_show/id_XMTg0MDE3NTM3Mg==.html)
-[更多风格图像展示墙](http://www.yabeetu.com/)
-[项目git地址](https://github.com/bbfamily/prisma_abu)
 
 ### 1 主要实现思路分解讲解
 
@@ -188,8 +179,6 @@ PrismaHelper.show_array_ipython(np.float32(d_img))
 
 
 
-[风格图像展示墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTczNDkuNzYwLjQzNzcwNTI4MTgwMy8uL2N2dC5qcGc=)
-
 代码并不多，主要思路如下：
 
 1. 通过filters.threshold_otsu找出图像的mask
@@ -198,13 +187,6 @@ PrismaHelper.show_array_ipython(np.float32(d_img))
 
 卷积的意义简单理解就是**加权叠加**, 针对输入的单位相应得到输出，为什么要用卷积呢，其实就是为了效率，如果上面的代码你从目的出发，知道要滤除什么样的像素点，保留什么样的像素点，使用for循环针对每一个像素点，计算像素点一定范围内（上面说的核大小）使用for循环一步一步的前进，你其实也能得出结果，但是运算的时间复杂度将大出几个数量级，这就类似很多最优问题你可以使用蒙特卡洛方法求最优解，但是由于计算量太大，实际上无法做到遍历所有路径，所以才会使用凸优化等数学方式求最优解，并且很多时候也是先求个大概的全局最优，然后在这个全局最优的基础上求解局部最优解。
 
-另外针对caffe及tensorflow的一些使用问题可以查看我的其它两篇文章:
-[打开股票量化的黑箱(自己动手写一个印钞机) 第三章](http://www.jianshu.com/p/056d8b28f581)
-[ 或者关注 股票量化专题](http://www.jianshu.com/collection/0a774f78050a)
-[爬取百度图片各种狗狗的图片，使用caffe训练模型分类](http://www.jianshu.com/p/6942241d4ad9)
-[ 或者关注 机器学习专题](http://www.jianshu.com/collection/7c9da6c79a89)
-
-**更多关于深度学习理论及实例请关注我将出版的一本关于深度学习方面的书籍**
 
 ### 2. 使用图像特征作为mask
 
@@ -504,7 +486,6 @@ _ = mix_mask_with_convd(partial(do_features, loop_factor=1.1), '../prisma_gd/717
 ![](http://upload-images.jianshu.io/upload_images/3136804-339bb4211a227d2f.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-[风格图像展示墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTc1MzIuMjgwLjc4NjM3MzE1Njc1Mi8uL2N2dC5qcGc=)
 
 如下库日天这张图使用均值回复mask方式可以对图片产生比较好的效果，使用其它两种效果均不佳，读者可自行测试
 
@@ -523,9 +504,6 @@ _ = mix_mask_with_convd(mask_stdmean_func, '../sample/kl.jpg', '../prisma_gd/cx7
 
 
 
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTc5MTcuMzcwLjcxOTAyMDMwOTMyOC8uL2N2dC5qcGc=)
-
-下面继续使用abu的照片作为示例（还是用abu的照片做效果心里比较高兴，如果您不想太麻烦搭建风格画的平台，可以把照片发给我，特别是**您家里的狗狗，猫，或者小孩子的照片**）
 
 使用abu2看看现在的方式的运行效率，%time计算一下耗时，请注意参数，n3=1，convd_median_factor=0.2, convd_big_factor=0.0
 也就是不使用最大的卷积核了，速度会非常快, 只用了5.62 s，而且这个速度还是做了一些其它工作，如显示原图等工作的情况下
@@ -549,7 +527,6 @@ _ = mix_mask_with_convd(mask_stdmean_func, '../sample/kl.jpg', '../prisma_gd/cx7
     Wall time: 4.2 s
 
 
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTczNTguNTYwLjE4NDk0MDA1MjM1NS8uL2N2dC5qcGc=)
 
 abu5使用partial(together_mask_func, func_list=[do_otsu, mask_features_func]), 组合多个特征抽取mask函数，多个滤波函数以'与的关系'进行组合，对图像进行mask，这里如果不是用together_mask_func的话，单独每个都要再次调整一些参数，比如单独使用do_otsu，要调大n2核的大小，影响速度，mask函数合并特征完美快速实现了需求
 
@@ -568,8 +545,6 @@ _ = mix_mask_with_convd(tgt_mask_func, '../sample/abu3.jpg', '../prisma_gd/cx3.j
 
 ![](http://upload-images.jianshu.io/upload_images/3136804-bca5f9fa8cb401a9.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTc0MTEuOTkwLjE3OTcyNjc4MjExMy8uL2N2dC5qcGc=)
 
 ### 5. 配合使用预处理图像增强，随机rgb浅层edges等增强prisma效果
 
@@ -647,7 +622,6 @@ _ = mix_mask_with_convd(tgt_mask_func, '../sample/lfs.jpg', '../prisma_gd/cx11.j
 ![](http://upload-images.jianshu.io/upload_images/3136804-f786adc5734887a2.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODExMDQyNjkuNjAuNDE5NDg5NDYyNzQ2Ly4vY3Z0LmpwZw==)
 
 感觉不是很帅，那怎么行，前置一个Sharpness预处理效果，看看
 
@@ -662,9 +636,6 @@ _ = mix_mask_with_convd(do_otsu, '../sample/lfs.jpg', '../prisma_gd/cx11.jpg', '
 
 ![](http://upload-images.jianshu.io/upload_images/3136804-87111edac2beedec.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODExMDQyNjkuNjAuNDE5NDg5NDYyNzQ2Ly4vY3Z0LmpwZw==)
 
 上面两个作出的效果，仔细观察你会发现，其实他们并没有使用引导图的sharp特征，只是通过阶梯rgb渲染，在原始图像上泼上了一层浅层的edges特征，这样的话
 实际上你不需使用上面这种实现方式，注意mix_mask_with_convd的参数all_mask，当all_mask为True时，将整个图像的mask全设置255，代码如下：
@@ -724,9 +695,6 @@ _ = pw.mix_mask_with_convd(partial(pw.do_otsu, dd=False), '../sample/gta4.jpg', 
 ![](http://upload-images.jianshu.io/upload_images/3136804-6ee98ba5512d7f0d.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTc4MzcuOTAuODU0NTA0NjMzNDM0Ly4vY3Z0LmpwZw==)
-
 如上图所示，效果还算不错，除了左下脚两个标准的重叠
 
 接下来使用批量处理引导图像，预处理，特征放大层等参数排列组合使用PrismaMaster，详情查询代码PrismaMaster.py
@@ -765,8 +733,6 @@ PrismaMaster.product_prisma(org_file_list, gd_file_list, nbk_list, enhance_list,
 
 接下来再做一个gui的可视化操作界面PrismaController, 使用了traitsui库，详情查看了PrismaController.py
 
-具体使用方式请参看 [youku 阿布Prisma演示视频](http://v.youku.com/v_show/id_XMTg0MDE3NTM3Mg==.html)
-
 
 ![](http://upload-images.jianshu.io/upload_images/3136804-5c2e54ac6d9ff03f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -777,13 +743,9 @@ PrismaMaster.product_prisma(org_file_list, gd_file_list, nbk_list, enhance_list,
 ![](http://upload-images.jianshu.io/upload_images/3136804-1ee95697ecec5ff9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTc4NDguMzQwLjYyNDU3OTQ1MTIyOS8uL2N2dC5qcGc=)
-
 
 ![](http://upload-images.jianshu.io/upload_images/3136804-5a20a7e54a90db68.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-[风格图像墙中地址](http://www.yabeetu.com/design/L3N0YXRpYy90ZW1wLzE0ODA4NTc4NjMuNjIwLjIzMTU5OTUwMDQ5Ny8uL2N2dC5qcGc=)
 
 上面这张犀利哥和GTA5合体的原图和引导特征图如下
 
@@ -795,7 +757,7 @@ for ind, ax in zip(range(1 * 2), axs):
     iter_fn = up_list[ind]
     iter_img = plt.imread(iter_fn)
     # ax.set_title(os.path.basename(iter_fn))
-    ax.imshow(iter_img);
+    ax.imshow(iter_img); 阿布Prisma演示视频
     ax.set_axis_off()
 ```
 
@@ -834,10 +796,6 @@ for ind, ax in zip(range(1 * 2), axs):
                                     self.stdmean_func_factor, self.features_func_factor, self.convd_median_factor,
                                     self.convd_big_factor, self.cb, all_mask, save_dir)
 
-搭建风格画的平台需要环境确实比较复杂，我也没有做一个pip安装工具，后期我看需求情况吧
-
-如果您不想太麻烦搭建风格画的平台，可以把需要处理的图像照片发给我，特别是**您家里的狗狗，猫，或者小孩子的照片**，我会很开心的为他们制作艺术风格照片的
-
 本章后记：
 
 1. 本文所讲的这种实现prisma的方式，不代表任何真实情况，只是一种可能的技术实现思路，并且在这种思路下还需要做很多的工作，比如针对适用性的问题也许要保存大量字典，字典的key可以是图像矩阵特征，value对应着处理参数，然后针对输入的图像进行分类或者特征相似度匹配来认定该使用那些参数等等复杂问题需要处理。
@@ -847,7 +805,4 @@ for ind, ax in zip(range(1 * 2), axs):
 ### 感谢🙏您能有耐心看到这里
 ### 如果有什么问题可以关注阿布的微信 
 ### 微信号：aaaabbbuu
-
-
-![](http://upload-images.jianshu.io/upload_images/3136804-c7eaa714fdb5b493.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
