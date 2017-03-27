@@ -8,7 +8,7 @@ g_prisma_image_size = 480
 g_prisma_image_keep_size = False
 g_force_iter_n = -1
 
-K_LOGO = 'yabeetu.com'
+K_LOGO = 'abu'
 g_enable_print_log = True
 g_print_log_pic = False
 
